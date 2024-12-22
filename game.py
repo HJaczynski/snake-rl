@@ -26,7 +26,7 @@ BLOCK_SIZE = 20
 SPEED = 20
 
 class SnakeGame:
-    def __init__(self, width=1280, height=720):
+    def __init__(self, width=640, height=480):
         self.width = width
         self.height = height
         self.display = pygame.display.set_mode((self.width, self.height))
@@ -67,7 +67,7 @@ class SnakeGame:
         if self.is_collision() or self.frame_iteration > 100*len(self.snake):
             game_over = True
             reward = -10
-            return game_over, self.score
+            return reward, game_over, self.score
         
         if self.head == self.food:
             self.score += 1
