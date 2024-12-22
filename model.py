@@ -61,4 +61,3 @@ class QTrainer:
         
         self.optimizer.step()
         
-        return loss.item()
